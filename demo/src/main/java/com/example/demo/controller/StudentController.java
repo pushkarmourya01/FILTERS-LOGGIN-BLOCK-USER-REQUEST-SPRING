@@ -1,12 +1,12 @@
 package com.example.demo.controller;
 
 
+import com.example.demo.DTO.Student;
+import com.example.demo.repository.StudentRepository;
 import com.example.demo.service.StudentService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/student")
@@ -17,8 +17,8 @@ public class StudentController {
     }
 
     @PostMapping
-    public ResponseEntity<String> createStudent(){
-        studentService.createStudent();
+    public ResponseEntity<String> createStudent(@RequestBody Student student){
+        studentService.createStudent(student);
         return ResponseEntity.ok("DONE");
     }
 

@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import com.example.demo.DTO.Student;
 import com.example.demo.repository.StudentRepository;
 import org.springframework.stereotype.Service;
 
@@ -10,7 +11,11 @@ public class StudentService {
     public StudentService(StudentRepository studentRepository){
         this.studentRepository=studentRepository;
     }
-    public void createStudent(){
+    public void createStudent(Student student){
         System.out.println("Student created");
+        System.out.println(student.getName());
+        System.out.println(student.getRoll());
+
+
     }
 }
